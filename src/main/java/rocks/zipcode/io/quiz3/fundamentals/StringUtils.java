@@ -1,6 +1,7 @@
 package rocks.zipcode.io.quiz3.fundamentals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -8,7 +9,12 @@ import java.util.List;
  */
 public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
-        return null;
+        char [] charArray = str.toCharArray();
+        char a = Character.toUpperCase(charArray[indexToCapitalize]);
+        charArray[indexToCapitalize] = a;
+        String str2 = new String(charArray);
+
+        return str2;
     }
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {

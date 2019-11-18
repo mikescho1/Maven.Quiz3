@@ -5,10 +5,16 @@ package rocks.zipcode.io.quiz3.arrays;
  */
 public class TicTacToe {
 
+    private String [][] board;
+    private Boolean victory;
+
+
     public TicTacToe(String[][] board) {
+        this.board = board;
     }
 
     public TicTacToe() {
+
     }
 
     public String[] getRow(Integer value) {
