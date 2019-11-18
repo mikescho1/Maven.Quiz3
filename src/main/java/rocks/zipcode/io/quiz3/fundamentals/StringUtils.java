@@ -1,5 +1,6 @@
 package rocks.zipcode.io.quiz3.fundamentals;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
  */
 public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
-        char [] charArray = str.toCharArray();
+        char[] charArray = str.toCharArray();
         char a = Character.toUpperCase(charArray[indexToCapitalize]);
         charArray[indexToCapitalize] = a;
         String str2 = new String(charArray);
@@ -23,10 +24,26 @@ public class StringUtils {
     }
 
     public static String[] getAllSubStrings(String string) {
-        return null;
+
+        ArrayList<String> substrings = new ArrayList();
+        int count = 0;
+        String sub;
+        int i, c, length;
+        length = string.length();
+        for (c = 0; c < length; c++) {
+            for (i = 1; i <= length - c; i++) {
+                sub = string.substring(c, c + i);
+                substrings.add(sub);
+                count++;
+            }
+        }
+        String[] arr = new String[count];
+        for ( i = 0; i < substrings.size(); i++)
+            arr[i] = substrings.get(i);
+        return arr;
     }
 
-    public static Integer getNumberOfSubStrings(String input){
+    public static Integer getNumberOfSubStrings(String input) {
         return null;
     }
 }
