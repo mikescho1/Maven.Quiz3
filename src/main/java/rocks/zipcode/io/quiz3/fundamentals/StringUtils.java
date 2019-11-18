@@ -18,7 +18,8 @@ public class StringUtils {
     }
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {
-        return null;
+
+        return baseString.indexOf(indexOfString) == characterToCheckFor;
     }
 
     public static String[] getAllSubStrings(String string) {
