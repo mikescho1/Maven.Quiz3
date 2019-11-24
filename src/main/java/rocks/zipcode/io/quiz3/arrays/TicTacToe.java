@@ -38,9 +38,20 @@ public class TicTacToe {
     }
 
     public String getWinner() {
-
-
-        return null;
+        for(int i = 0; i < 3; i++)  {
+            if(isColumnHomogeneous(i)){
+                return board[0][i];
+            }
+            if(isRowHomogenous(i))  {
+                return board[i][0];
+            }
+        }
+        if(board[0][0].equals(board[1][1]) && board[1][1].equals(board[2][2]))  {
+            return board[0][0];
+        }   else if(board[0][2].equals(board[1][1]) && board[1][1].equals(board[2][0])) {
+            return board[0][2];
+        }
+        return "TIE";
     }
 
     public String[][] getBoard() {
