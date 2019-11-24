@@ -8,25 +8,17 @@ import java.util.List;
  */
 public class WaveGenerator {
     public static String[] wave(String str) {
+        ArrayList<String> strArrLst = new ArrayList<>();
         str = str.toLowerCase();
-        String str2 = "";
-        char[] charArray = str.toCharArray();
-        int count = 0;
-        List strArrLst = new ArrayList<>(str.length());
-        for (int i = 0; i < strArrLst.size(); i++) {
-            strArrLst.add(str);
-        }
-        for (int i = 0; i < charArray.length; i++) {
-            for (int j = 0; j < charArray.length; j++) {
-                if (!Character.isWhitespace(charArray[j]) && i == j) {
-                    charArray[j] = Character.toUpperCase(charArray[j]);
-                }
-                if (!Character.isWhitespace(charArray[j]) && i != j) {
-                    charArray[j] = charArray[j];
-                }
+
+
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isAlphabetic(str.charAt(i))) {
+                strArrLst.add(str.substring(0, i) + Character.toUpperCase(str.charAt(i)) + str.substring(i + 1));
             }
-
-
-        }   return null;
+        }
+        String[] arr = new String[strArrLst.size()];
+        arr = strArrLst.toArray(arr);
+        return arr;
     }
 }
